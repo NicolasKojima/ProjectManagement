@@ -20,8 +20,8 @@ return new class extends Migration
             $table->text("projdescription");
             $table->string("Relavance");
             $table->string("skills");
-            // $table->string("image");
-            // $table->string('profilepic');
+            $table->string("image");
+            $table->binary('profilepic')->nullable();
             $table->timestamps();
         });
     }

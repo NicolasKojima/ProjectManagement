@@ -12,9 +12,9 @@ class form extends Model
         'name',
         'projname',
         'projdescription',
-        'Relavance',
+        'relavance',
         'skills',
-        // 'image',
-        // 'profilepic',
+        'image',
+        'profilepic',
     ];
 }

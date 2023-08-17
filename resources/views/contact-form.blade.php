@@ -2,7 +2,7 @@
 <html lang="en" dir="ltr">
   <head>
     <meta charset="UTF-8">
-    <title> Responsive Contact Us Form </title>
+    <title> Responsive Contact Us form </title>
     <link rel="stylesheet" href="css-contact.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css"/>
      <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -86,6 +86,22 @@
         height: 50px;
         width: 100%;
         margin: 12px 0;
+        padding-bottom: 10px;
+        }
+
+        .form-container {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        height: 100%;
+        }
+        .form-footer {
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          margin-top: 20px; /* Add spacing from the form content */
+          margin-top: 50px;
+          text-align: center;
         }
         .right-side .input-box input,
         .right-side .input-box textarea{
@@ -201,24 +217,32 @@
           <div class="text-two">nicolas.t.y.kojima@gmail.com</div>
         </div>
       </div>
+
       <div class="right-side">
         <div class="topic-text">Send us a message</div>
-        <p>If you have any work from me or any types of quries, you can send me message from here. It would be my pleasure to meet you!</p>
-      <form action="#">
-        <div class="input-box">
-          <input type="text" placeholder="Enter your name">
-        </div>
-        <div class="input-box">
-          <input type="text" placeholder="Enter your email">
-        </div>
-        <div class="input-box1">
-          <input type="text" placeholder="Enter the Contents of your inquiry">
-        </div>
-        <div class="button">
-          <input type="button" value="Send Now" >
+          <p>If you have any work from us or any types of quries, you can send me message from here. It would be our pleasure to meet you!</p>
+           <div class="form-container">
+            <form name="registration" id="registration" method="post" action="{{url('store-form2')}}"  enctype="multipart/form-data">
+            @csrf
+                <div class="input-box">
+                  <label for="exampleInputEmail1">Your Name</label>
+                  <input type="string" id="name" name="name" class="form-control" required="" placeholder="enter your name">
+                </div>
+                <div class="input-box">
+                  <label for="exampleInputEmail1">Email</label>
+                  <input type="string" id="email" name="email" class="form-control" required="" placeholder="enter your email">
+                </div>
+                <div class="input-box1">
+                  <label for="exampleInputEmail1">Introduction</label>
+                  <textarea name="inquiry" class="form-control" required="" placeholder="enter your inquiry"></textarea>
+                </div>
+                <div class="form-footer">
+                  <button type="submit" class="btn btn-primary">Submit</button>
+                </div>
+            </form>
+          </div>
         </div>
       </form>
-    </div>
     </div>
   </div>
 </body>

@@ -13,6 +13,6 @@ class indivs extends Model
         'name',
         'email',
         'introduction',
-        // 'profilepic',
+        'profilepic',
     ];
 }

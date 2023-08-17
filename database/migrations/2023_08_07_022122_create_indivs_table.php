@@ -18,7 +18,7 @@ return new class extends Migration
             $table->string('name');
             $table->string('email');
             $table->text('introduction');
-            // $table->string('profilepic');
+            $table->binary('profilepic')->nullable();
             $table->timestamps();
         });
     }

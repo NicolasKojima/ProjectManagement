@@ -11,7 +11,9 @@
 
     <link rel="canonical" href="https://getbootstrap.com/docs/5.0/examples/album/">
 
-    
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-xxxxx" crossorigin="anonymous"></script>
+
 
     <!-- Bootstrap core CSS -->
 <link href="https://getbootstrap.com/docs/5.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
@@ -35,9 +37,41 @@
         user-select: none;
       }
 
+      .margin{
+        margin-bottom: 25px;
+      }
+
+      .post-bottom-grid {
+        margin-top: 5vh;
+        display: grid;
+        grid-template-columns: 90% 10%; 
+        grid-template-rows: min-content; 
+        position: relative;
+      }
+  
+
       .card {
         margin-bottom: 6vh;
       }
+
+      .image-box {
+        width: 50vw;
+        height: 50vh;
+        object-fit: contain;
+        display: flex;
+        justify-content: center;
+      }
+
+      .photo-name {
+        max-width: 80px;  /* Set maximum width */
+        max-height: 80px; /* Set maximum height */
+        width: auto;      /* Allow automatic width adjustment */
+        height: auto;     /* Allow automatic height adjustment */
+        border-radius: 50%;
+        object-fit: cover; /* Maintain aspect ratio and cover container */
+    }
+      
+
 
       .col {
         padding-bottom: 3vh;
@@ -51,7 +85,7 @@
       .individual {
           display: grid;
           grid-template-columns: 10% 50% 40%;
-          height: 50px;
+          height: 80px;
         }
 
       .name {
@@ -61,12 +95,6 @@
           align-items: center;
           padding-top: 10px;
         }
-      .photo-name {
-        position: absolute;
-        width: 50px;
-        height: 50px;
-        grid-column: 1;
-      }
 
       .skills {
         margin-left:2vw;
@@ -78,7 +106,7 @@
 
       .project-description {
         font-size: small;
-        max-height: 60vh; /* Adjust the height as per your requirements */
+        max-height: 200px; 
         overflow: auto;
         word-wrap: break-word;
         margin-top: 5vh;
@@ -100,6 +128,16 @@
 
       .project-description {
         font-size: small;
+      }
+       
+      .editlink {
+        text-align: center;
+        grid-column: 3;
+        padding-top: 25;
+        display: flex; 
+        justify-content: flex-end;
+        margin-right: 3vw;
+        margin-top: 5vh;
       }
 
       .text-muted {
@@ -130,122 +168,155 @@
 
     
   </head>
-  <body>
-    
-<header>
-  <div class="collapse bg-dark" id="navbarHeader">
-    <div class="container">
-      <div class="row">
-        <div class="col-sm-8 col-md-7 py-4">
-          <h4 class="text-white">DC Department Introduction</h4>
-          <p class="company-intro"> >include the DC teams goals as a department< </p>
-        </div>
-        <div class="col-sm-4 offset-md-1 py-4">
-          <h4 class="text-white">Contact information</h4>
-          <ul class="list-unstyled">
-            <li><a href="#" class="text-white">Follow on Twitter</a></li>
-            <li><a href="#" class="text-white">Like on Facebook</a></li>
-            <li><a href="#" class="text-white">Email me</a></li>
-          </ul>
+<body>
+    <header>
+      <div class="collapse bg-dark" id="navbarHeader">
+        <div class="container">
+          <div class="row">
+            <div class="col-sm-8 col-md-7 py-4">
+              <h4 class="text-white">DC Department Introduction</h4>
+              <p class="company-intro"> >include the DC teams goals as a department< </p>
+            </div>
+            <div class="col-sm-4 offset-md-1 py-4">
+              <h4 class="text-white">Contact information</h4>
+              <ul class="list-unstyled">
+                <li><a href="#" class="text-white">Follow on Twitter</a></li>
+                <li><a href="#" class="text-white">Like on Facebook</a></li>
+                <li><a href="#" class="text-white">Email me</a></li>
+              </ul>
+            </div>
+          </div>
         </div>
       </div>
-    </div>
-  </div>
-  <div class="navbar navbar-dark bg-dark shadow-sm">
-    <div class="container">
-      <a href="#" class="navbar-brand d-flex align-items-center">
-        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" aria-hidden="true" class="me-2" viewBox="0 0 24 24"><path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"/><circle cx="12" cy="13" r="4"/></svg>
-        <strong>Zeal Team</strong>
-      </a>
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarHeader" aria-controls="navbarHeader" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-    </div>
-  </div>
-</header>
+      <div class="navbar navbar-dark bg-dark shadow-sm">
+        <div class="container">
+          <a href="#" class="navbar-brand d-flex align-items-center">
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" aria-hidden="true" class="me-2" viewBox="0 0 24 24"><path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"/><circle cx="12" cy="13" r="4"/></svg>
+            <strong>Zeal Team</strong>
+          </a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarHeader" aria-controls="navbarHeader" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+        </div>
+      </div>
+    </header>
 
-<main>
+    <main>
+      <section class="py-5 text-center container">
+        <div class="row py-lg-5">
+          <div class="col-lg-6 col-md-8 mx-auto">
+            <marquee>
+              <h1 style="repeat:true">Digital Communications</h1>
+            </marquee>
+            <p>
+              <a href="contact-form" class="btn btn-primary my-2" > Contact Us</a>
+              <a href="about-us" class="btn btn-primary my-2" > About Us</a>
+              <a href="post-project" class="btn btn-secondary my-2" > Post Project</a>
+              <a href="registration" class="btn btn-secondary my-2" > Registration</a>
+            </p>
+          </div>
+        </div>
+      </section>
 
-  <section class="py-5 text-center container">
-    <div class="row py-lg-5">
-      <div class="col-lg-6 col-md-8 mx-auto">
-        <marquee>
-          <h1 style="repeat:true">Digital Communications</h1>
-        </marquee>
-        <!-- <p class="lead text-muted">Something short and leading about the collection below—its contents, the creator, etc. Make it short and sweet, but not too short so folks don’t simply skip over it entirely.</p> -->
-        <p>
-          <a href="contact-form" class="btn btn-primary my-2" > Contact Us</a>
-          <a href="about-us" class="btn btn-primary my-2" > About Us</a>
-          <a href="post-project" class="btn btn-primary my-2" > Post Project</a>
-          <a href="homepage/registration" class="btn btn-primary my-2" > Registration</a>
-          <a href="#last" class="btn btn-secondary my-2"> to the bottom </a>
+      <div class="album py-5 bg-light">
+        <div class="container">
+          <div class="row row-cols-1 row-cols-sm-1 row-cols-md-1 g-1">
+            @foreach ($forms as $form)
+            <div class="col">
+              <div class="margin">
+                <div class="card shadow-sm">
+                  <div class="test">
+                    <div class="individual">
+                      <div class="photo-name">
+                        <img style="border-radius: 50%; width: 80px; height: 80px;" src="<?php echo asset('/storage/image/'.$form->profilepic)?>" alt="Profile Picture">
+                      </div>
+                      <div class="name">
+                        <p>{{$form->name}}</p>
+                      </div>
+                      <div>
+                        <a class="editlink" href="{{ route('edit', $form->id) }}">Edit Form {{ $form->id }}</a>
+                        <small class="text-muted" >{{ $form->created_at->format('Y-m-d H:i:s') }}    </small>
+                      </div>
+                    </div>
+                    <div class="post-grid">
+                      <div class="image-box">
+                        <img class="main-image" src="<?php echo asset('/storage/image/'.$form->image)?>" alt="Main Image"></img>
+                      </div>
+                      <div class="skills">
+                        <h4 class="project-title"> {{$form->projname}} </h4>
+                        <div class="project-description">
+                          <p>{{$form->projdescription}}</p>
+                        </div>
+                      </div>
+                    </div>  
+                    <title>Placeholder</title>
+                    <rect width="100%" height="100%" fill="#55595c"/>                       
+                    <div class="card-body">
+                      <div class="post-bottom-grid">
+                        <div class="skill-rele">
+                          <h6 class="card-text">{{$form->skills}}</h6>
+                          <p class="skill-desc"> {{$form->Relavance}}</p>
+                          <div class="d-flex justify-content-between align-items-center"></div>
+                        </div>  
+                        <!-- <div class="delete-button">
+                          <form action="{{ route('delete', $form->id) }}" method="POST" id="del-form">
+                            @csrf
+                            @method('DELETE')
+                            <button type="button" class="btn btn-danger" onclick="del()">Delete</button>
+                            
+                          </form>
+                        </div> -->
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        @endforeach
+      </div>
+    </div>
+
+    <script>
+
+function del(){
+
+  let text;
+if (confirm("Are you sure to delete ?") == true) {
+  document.getElementById("del-form").submit();
+} else {
+  return false;
+}
+}
+    </script>
+          <!-- <script>
+                document.addEventListener('DOMContentLoaded', function () {
+                    const deleteButtons = document.querySelectorAll('.delete-btn');
+                    const confirmDeleteBtn = document.getElementById('confirmDeleteBtn');
+                    let deleteForm;
+
+                    deleteButtons.forEach(button => {
+                        button.addEventListener('click', function () {
+                            deleteForm = button.closest('form');
+                        });
+                    });
+
+                    confirmDeleteBtn.addEventListener('click', function () {
+                        if (deleteForm) {
+                            deleteForm.submit();
+                        }
+                    });
+                });
+          </script> -->
+    </main>
+
+    <footer class="text-muted py-5">
+      <div class="container">
+        <p class="float-end mb-1">
+          <a href="#">Back to top</a>
         </p>
       </div>
-    </div>
-  </section>
-
-    <div class="album py-5 bg-light">
-        <div class="container">
-            <div class="row row-cols-1 row-cols-sm-1 row-cols-md-1 g-1">
-                @foreach ($forms as $form)
-                   <div class="col">
-                        <div class="card shadow-sm">
-                          <div class="test">
-                            <div class="individual">
-                                <div class="photo-name">
-                                    <img width="20px" height="20px" src="">
-                                </div>
-                                <div class="name">
-                                    <p>{{$form->name}}</p>
-                                </div>
-                                <div>
-                                    <small class="text-muted" >{{ $form->created_at->format('Y-m-d H:i:s') }}    </small>
-                                </div>
-                              </div>
-                            <div class="post-grid">
-                              
-                                  <div class="skills">
-                                      <h4 class="project-title"> {{$form->projname}} </h4>
-                                      <div class="project-description">
-                                        <p>{{$form->projdescription}}</p>
-                                      </div>
-                                  </div>
-                            </div>  
-                                <title>Placeholder</title>
-                                <rect width="100%" height="100%" fill="#55595c"/>
-                                </img>
-                            <div class="card-body">
-                                <h6 class="card-text">{{$form->skills}}</h6>
-                                <p class="skill-desc"> {{$form->Relavance}}</p>
-                                <div class="d-flex justify-content-between align-items-center">
-                                <!-- <h6 class="card-text">Relevance :</h6>
-                                <p class="skill-desc"> >plugin metadata for company department< etc. for human resources</p>
-                                <div class="d-flex justify-content-between align-items-center">
-                                     -->
-                            </div>
-                            </div>
-                        </div>
-                  </div>
-              @endforeach
-          </div>
-      </div>
-  </div>
-
-
-</main>
-
-<footer class="text-muted py-5">
-  <div class="container">
-    <p class="float-end mb-1">
-      <a href="#">Back to top</a>
-    </p>
-  <a href="last" id="last">
-    <p class="mb-1">Album example is &copy; Bootstrap, but please download and customize it for yourself!</p>
-    <p class="mb-0">New to Bootstrap? <a href="/">Visit the homepage</a> or read our <a href="/docs/5.0/getting-started/introduction/">getting started guide</a>.</p>
-  </a>
-  </div>
-</footer>
-    <script src="https://getbootstrap.com/docs/5.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
-      
-  </body>
+    </footer>
+  <script src="https://getbootstrap.com/docs/5.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+</body>
 </html>
